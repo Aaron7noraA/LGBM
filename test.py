@@ -42,3 +42,20 @@ study.optimize(objective, n_trials=50)
 print("Best Accuracy:", study.best_value)
 print("Best Parameters:", study.best_params)
 
+
+
+
+
+import optuna.visualization as vis
+from optuna.visualization._plotly_imports import go
+
+# Optimization history
+fig1 = vis.plot_optimization_history(study)
+fig1.write_image("optuna_optimization_history.png")
+
+# Parameter importance
+fig2 = vis.plot_param_importances(study)
+fig2.write_image("optuna_param_importance.png")
+
+
+
